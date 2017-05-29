@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Iowa Medicaid Enterprises">
+    <title>Iowa Medicaid Services</title>
+  <!!!!!  <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./newsign.css">
+  </head>
+  <body>
+ <div class="container">
+      <div class="header">
+                <h2><img src="C:/Users/Shivani/Documents/pvaction/ime.jpg" style="float:left;width: 170px">Iowa Medicaid Enterprise</h2>
+                <h2>MMIS Online Application</h2>
+		<h1 align="center">PROVIDER MASTER FUNCTION MENU</h1>
+            </div>
+<div class="logincontainer" style="text-align:center">
+<table align="center">
+<tr><td><label><b>ACTION:</b></label> </td>
+    <td><select name="userAction" align="center" style="width:auto;">
+    <option value="INQUIRY">INQUIRY</option>
+    <option value="ADD">ADD</option>
+    <option value="UPDATE">UPDATE</option>
+    <option value="DELETE">DELETE</option>
+    </select></td> </tr>
+    <tr><td><label ><b>NPI NUMBER:</b></label></td>
+    <td><input type="text" placeholder="10 digit npi number" name="provNpi" id="npi" maxlength="10" required onblur="leftPadd()" size="100"></td></tr>
+    <script>
+    function leftPadd() {
+    var padded = "0000000000" + document.getElementById("npi").value;
+    provNpi = padded.substr(-10);
+    document.getElementById("npi").value= provNpi;
+    error.innerHTML = 'Entry Padded with Zeros	'
+    } </script>
+
+    <tr><td> <label><b>MEDICAID    #:</b></label></td>
+    <td><input type="text" placeholder="7 digit legacy number" maxlength="9" name="provNumber" id="mednumber" required onblur="leftPadd1()"></br>
+    <script>
+    function leftPadd1() {
+    var padded = "0000000" + document.getElementById("mednumber").value;
+    mednumber = padded.substr(-7);
+    document.getElementById("mednumber").value= mednumber;
+    } </script> 	    
+    
+    <tr><td><label><b>SSN / EID:</b></label></td>
+    <td><input type="text" placeholder="ssn/eid" name="provSsn" maxlength="9" id="ssn" required onblur="rightPadd()"></td></tr>
+    <script>
+    function rightPadd() {
+    var padded =  document.getElementById("ssn").value + "000000000" ;
+    ssn = padded.substr(0,9);
+    document.getElementById("ssn").value= ssn;
+    } </script>
+
+
+
+    <tr><td> <label><b>PROVIDER NAME:</b></label></td>
+    <td><input type="text" placeholder="provider name" name="provName" maxlength="35" required></td></tr>
+        
+    <tr><td> <label><b>PROVIDER TYPE:</b></label></td>
+    <td><select name="provType" align="center" style="width:auto;">
+    <option value="01">01-General Hospital </option>
+    <option value="02">02-Physician MD</option>
+    <option value="03">03-Physician DO</option>
+    <option value="04">04-Dentist</option>
+    <option value="05">05-Podiatrist</option>
+    <option value="06">06-Optometrist</option>
+    <option value="09">09-Home Health Agency</option>
+    </select></td></tr> </table>
+
+    <p align="center"> <button type="submit">Submit</button></p>
+    
+</div>
+     
+<footer>
+     <div class="footer-info" >
+       <ul class="footer-list">
+          <li class="footer-line"><a href="https://dhs.iowa.gov/site-map">Site Map</a></li>
+            <li class="footer-line"><a href="https://dhs.iowa.gov/hipaa"> HIPPA</a></li>
+             <li class="footer-line"><a href="https://www.iowa.gov/policies/disclaimer"> Privacy</a></li>
+             <li class="footer-line"><a href="https://dhs.iowa.gov/contact-us"> Contact Support</a></li>
+        </ul>
+     </div>
+</footer>
+</div>
+</body>
+</html>
